@@ -1,0 +1,9 @@
+@use 'sass:color';
+
+$background: #121212;
+$text: #FFF;
+$text-disiabled: rgba($text, 0.2);
+$text-accent: #FF4FFF;
+$text-accent-disiabled: rgba($text-accent, 0.4);
+$bg-accent: #FF00FF;
+$bg-accent-aplha: rgba($bg-accent, 0.125);

@@ -1,0 +1,52 @@
+@import "variables.scss";
+@import url(normalize.css);
+
+body {
+  background-color: $background;
+  color: $text;
+  font-family: Roboto Mono Variable;
+  font-size: 1.25rem;
+}
+
+.button-list {
+  *:not(:last-child) {
+    &::after {
+      content: " | ";
+      color: $text;
+    }
+  }
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: $text-accent-disiabled;
+  //border-bottom: $text-accent-disiabled solid 1px;
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.root {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  .content {
+    flex-grow: 1
+  }
+}
