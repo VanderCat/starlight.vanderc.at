@@ -1,6 +1,7 @@
 <template>
     <div class="text-medium disable-select button-list">
-        <a>faq</a>
-        <a>status</a>
+        <RouterLink to="faq">faq</RouterLink>
+        <RouterLink to="status">status</RouterLink>
+        <RouterLink to="/">home</RouterLink>
     </div>
 </template>

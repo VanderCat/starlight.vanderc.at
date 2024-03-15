@@ -9,10 +9,15 @@ body {
 }
 
 .button-list {
-  *:not(:last-child) {
-    &::after {
-      content: " | ";
-      color: $text;
+  * {
+    &>*:last-child {
+      text-decoration: none;
+    }
+    &:not(:last-child) {
+      &::after {
+        content: " | ";
+        color: $text;
+      }
     }
   }
 }
@@ -30,6 +35,10 @@ body {
 a {
   color: $text-accent-disiabled;
   //border-bottom: $text-accent-disiabled solid 1px;
+  &:any-link {
+    text-decoration:underline;
+    color: $text-accent
+  }
 }
 
 .disable-select {
@@ -49,4 +58,11 @@ a {
   .content {
     flex-grow: 1
   }
+}
+
+input[type="text"], input[type="password"] {
+  background: none;
+  border:none;
+  outline: none;
+  color: $text;
 }

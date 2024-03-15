@@ -6,16 +6,16 @@
                 <h1 class="header">Get Starlight Launcher</h1>
                 <div class="dl-list">
                     <DownloadButton name="windows" :icon="mdiMicrosoftWindows">
-                        <a>zip x64</a>
-                        <a>setup x64</a>
+                        <a href="#">zip x64</a>
+                        <a href="#">setup x64</a>
                     </DownloadButton>
                     <DownloadButton name="linux" :icon="mdiLinux">
-                        <a>tar x64</a>
-                        <a>deb x64</a>
+                        <a href="#">tar x64</a>
+                        <a href="#">deb x64</a>
                     </DownloadButton>
                     <DownloadButton name="macos" :icon="mdiFoodApple">
-                        <a>dmg x64</a>
-                        <a>dmg arm64</a>
+                        <a href="#">dmg x64</a>
+                        <a href="#">dmg arm64</a>
                     </DownloadButton>
                 </div>
             </div>
@@ -45,5 +45,8 @@ import { mdiMicrosoftWindows, mdiLinux, mdiFoodApple } from '@mdi/js'
     color: #fff;
     font-weight: regular;
     font-size: 20px;
+}
+.link-list>a:any-link {
+    text-decoration: none;
 }
 </style>
