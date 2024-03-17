@@ -4,9 +4,9 @@
             <div class="content">
             create your new account and embrace the feelings for the equine.<br/>
             <br/>
-            Username: <input type="text" v-model="username"/><br/>
-            Password: <input type="password" v-model="password"/><br/>
-            Type Again: <input type="password"/><br/>
+            Username: <input type="text" v-model="username" @keypress.enter="passwordField.focus()"/><br/>
+            Password: <input type="password" v-model="password" ref="passwordField" @keypress.enter="passwordField2.focus()"/><br/>
+            Type Again: <input type="password" v-model="password2" ref="passwordField2" @keypress.enter="register"/><br/>
             <br/>
             <ErrorLogin :errorMessage="errMsg" :errorCause="errCause" v-if="err" />
             [<a href="#" @click="register" >ok</a>] [<RouterLink to="login">login instead</RouterLink>]
@@ -24,13 +24,22 @@ import ErrorLogin from '@/components/ErrorLogin.vue'
 
 const username = ref('')
 const password = ref('')
+const password2 = ref('')
 
 const err = ref(false)
 const errMsg = ref('')
 const errCause = ref('')
 
+const passwordField2 = ref()
+const passwordField = ref()
+
 async function register() {
     try {
+        if (password2.value != password.value){
+            err.value = true;
+            errMsg.value = "passwords do not match!"
+            return;
+        }
         err.value = false
         let result = await axios.post("https://goldenoak.vanderc.at/register", {
             username: username.value,

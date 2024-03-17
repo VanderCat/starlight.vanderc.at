@@ -3,8 +3,8 @@
         <div class="content">
             by logging in you accept that starlight glimmer is the best pony.<br/>
             <br/>
-            Username: <input type="text" v-model="username"/><br/>
-            Password: <input type="password" v-model="password"/><br/>
+            Username: <input type="text" v-model="username" @keypress.enter="passwordField.focus()"/><br/>
+            Password: <input type="password" v-model="password" ref="passwordField" @keypress.enter="login"/><br/>
             <br/>
             <ErrorLogin :errorMessage="errMsg" :errorCause="errCause" v-if="err" />
             [<a href="#" @click="login">ok</a>] [<RouterLink to="register">register</RouterLink>]
@@ -25,6 +25,8 @@ const password = ref('')
 const err = ref(false)
 const errMsg = ref('')
 const errCause = ref('')
+
+const passwordField = ref()
 
 async function login() {
     try {
