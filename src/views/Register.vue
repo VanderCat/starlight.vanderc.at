@@ -33,6 +33,16 @@ const errCause = ref('')
 const passwordField2 = ref()
 const passwordField = ref()
 
+import { useRoute, useRouter } from 'vue-router'
+
+const router = useRouter()
+
+
+import { useUserStore } from '@/stores/user';
+const store = useUserStore();
+
+if (store.token != null) router.replace("/")
+
 async function register() {
     try {
         if (password2.value != password.value){
@@ -46,6 +56,7 @@ async function register() {
             password: password.value
         })
         console.log(result.response)
+        router.push("login")
     } catch (error) {
         err.value = true
         errMsg.value = error.response.data.errorMessage
