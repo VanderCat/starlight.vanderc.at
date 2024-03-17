@@ -2,7 +2,7 @@
     <div class="text-medium login disable-select">
         <div>logged in as <i>VanderCat</i></div>
         <div class="button-list">
-            <a>not you?</a>
+            <RouterLink to="login">not you?</RouterLink>
             <a>profile</a>
         </div>
     </div>

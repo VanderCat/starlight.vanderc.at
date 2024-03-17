@@ -2,7 +2,7 @@
     <div>
         <LoginWidget/>
         <div class="content">
-            <div>
+            <div class="container">
                 <h1 class="header">Get Starlight Launcher</h1>
                 <div class="dl-list">
                     <DownloadButton name="windows" :icon="mdiMicrosoftWindows">
@@ -35,6 +35,7 @@ import { mdiMicrosoftWindows, mdiLinux, mdiFoodApple } from '@mdi/js'
 <style scoped>
 .header {
     font-size: 3rem;
+    text-align: center;
 }
 
 .dl-list {
@@ -48,5 +49,17 @@ import { mdiMicrosoftWindows, mdiLinux, mdiFoodApple } from '@mdi/js'
 }
 .link-list>a:any-link {
     text-decoration: none;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+    .dl-list {
+        flex-direction: column;
+    }
 }
 </style>
