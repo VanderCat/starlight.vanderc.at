@@ -21,7 +21,7 @@
                         </a>
                     </div>
                 </h3>
-                <div class="list">
+                <div class="list" v-if="isThisUserLoggedIn">
                     <a>change password</a>
                     <a>change skin</a>
                 </div>
@@ -84,8 +84,8 @@ async function changeName() {
             Authorization: `Bearer ${store.token}`
         }
     })
+    user.value.name = text.value
     store.user.name = text.value
-    user.name.value = text.value
 }
 
 async function closeEdit() {
