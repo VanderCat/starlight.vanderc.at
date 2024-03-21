@@ -107,4 +107,7 @@ async function closeEdit() {
     align-items: center;
     gap: 1rem;
 }
+.content {
+    width: auto;
+}
 </style>
