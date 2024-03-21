@@ -22,7 +22,7 @@
                     </div>
                 </h3>
                 <div class="list" v-if="isThisUserLoggedIn">
-                    <a>change password</a>
+                    <RouterLink to="/changepassword">change password</RouterLink>
                     <a>change skin</a>
                 </div>
             </div>
