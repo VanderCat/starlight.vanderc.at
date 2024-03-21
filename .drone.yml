@@ -1,0 +1,22 @@
+kind: pipeline
+type: docker
+name: default
+workspace:
+  base: /app 
+  path: .
+
+steps:
+  - name: build
+    image: node
+    volumes:
+      - name: dist
+        path: /app/dist
+    commands:
+    - rm -rf dist/*
+    - yarn
+    - yarn build
+
+volumes:
+  - name: dist
+    host:
+      path: /usr/share/nginx/html/starlight
